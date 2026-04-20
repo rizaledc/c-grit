@@ -2,32 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: #FFFFFF;
+    --surface: #F8FAF9;
+    --surface-card: #FFFFFF;
+    --border: #E5EDE9;
+    
+    --primary: #1b4332;
+    --primary-light: #2d6a4f;
+    --primary-pale: #d8f3dc;
+    
+    --accent: #0077b6;
+    --accent-light: #caf0f8;
+    
+    --text-primary: #111827;
+    --text-secondary: #4B5563;
+    --text-muted: #9CA3AF;
+    
+    --success: #16a34a;
+    --warning: #d97706;
+    --danger: #dc2626;
+
+    /* Shadcn Specific Maps for compatibility */
+    --foreground: #111827;
+    --card: #FFFFFF;
+    --card-foreground: #111827;
+    --popover: #FFFFFF;
+    --popover-foreground: #111827;
+    --primary-foreground: #FFFFFF;
+    --secondary: #F8FAF9;
+    --secondary-foreground: #111827;
+    --muted: #F8FAF9;
+    --muted-foreground: #9CA3AF;
+    --accent-foreground: #111827;
+    --destructive: #dc2626;
+    --destructive-foreground: #FFFFFF;
+    --ring: #1b4332;
+    --radius: 0.5rem;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Custom leaflet popup overrides for white theme */
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: var(--surface-card) !important;
+  color: var(--text-primary) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10) !important;
+}
+
+.leaflet-container {
+  background: #f1f5f9 !important;
 }
