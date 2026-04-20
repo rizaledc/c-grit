@@ -51,6 +51,13 @@ export default function Navbar() {
             <span className="hidden md:inline-block">Tentang</span>
           </Link>
         </div>
+
+        {/* Team label — far right */}
+        <div className="hidden lg:flex items-center ml-6 pl-6 border-l border-border shrink-0">
+          <span className="text-xs font-semibold text-text-muted tracking-widest uppercase">
+            Tim Green Blue Ecosystem
+          </span>
+        </div>
       </div>
     </nav>
   );
