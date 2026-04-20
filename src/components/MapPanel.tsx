@@ -246,13 +246,6 @@ export default function MapPanel() {
                   attribution="© C-GRIT v3.2 | Maptiler | Google Earth Engine"
                 />
               ))}
-
-              <Marker position={[-7.5, 110.0]}>
-                <Popup>
-                  <div className="font-semibold mb-1">C-GRIT AOI</div>
-                  <div className="text-sm">Jawa Tengah</div>
-                </Popup>
-              </Marker>
             </MapContainer>
           </div>
 
