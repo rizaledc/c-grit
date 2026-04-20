@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMap, ZoomControl } from 'react-leaflet';
+import { MapContainer, TileLayer, GeoJSON, Popup, useMap, ZoomControl } from 'react-leaflet';
 import L from 'leaflet';
 import { Layers, TreePine, Waves, ScanLine, Map as MapIcon, ClipboardList, Satellite } from 'lucide-react';
 import { MAP_TILES, lulcLegendData } from '@/data/carbon_data';
+import jawaBounds from '@/data/batas_pulau_jawa.geojson';
 
 const iconUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png';
 const iconRetinaUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png';
@@ -235,6 +236,17 @@ export default function MapPanel() {
               />
               <ZoomControl position="bottomright" />
               <CoordinateDisplay />
+
+              {/* Java Island boundary outline */}
+              <GeoJSON
+                data={jawaBounds as any}
+                style={{
+                  color: '#1b4332',
+                  weight: 1.5,
+                  fillOpacity: 0,
+                  dashArray: '4 2',
+                }}
+              />
 
               {/* Render TileLayer untuk semua layer aktif */}
               {LAYERS.filter(l => activeLayers[l.id]).map(layer => (

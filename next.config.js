@@ -13,6 +13,13 @@ const nextConfig = {
     NEXT_PUBLIC_MAPTILER_TILESET_2020: process.env.NEXT_PUBLIC_MAPTILER_TILESET_2020,
     NEXT_PUBLIC_MAPTILER_TILESET_2025: process.env.NEXT_PUBLIC_MAPTILER_TILESET_2025,
   },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.geojson$/,
+      type: 'json',
+    });
+    return config;
+  },
 }
 
 module.exports = nextConfig
