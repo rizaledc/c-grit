@@ -54,8 +54,8 @@ export default function Navbar() {
 
         {/* Team label — far right */}
         <div className="hidden lg:flex items-center ml-6 pl-6 border-l border-border shrink-0">
-          <span className="text-xs font-semibold text-text-muted tracking-widest uppercase">
-            Tim Green Blue Ecosystem
+          <span className="text-xs font-bold text-primary tracking-widest uppercase">
+            CARBIONIX
           </span>
         </div>
       </div>

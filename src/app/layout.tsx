@@ -42,8 +42,8 @@ export default function RootLayout({
               <p className="text-sm text-gray-400 leading-relaxed pr-4">
                 Estimasi stok blue carbon dan green carbon Pulau Jawa berbasis penginderaan jarak jauh multi-temporal 2020–2025.
               </p>
-              <div className="inline-block px-3 py-1 bg-gray-800 text-xs rounded-full border border-gray-700 text-gray-300">
-                C-GRIT Framework v3.2
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-gray-800 text-xs rounded-full border border-gray-700 text-emerald-400 font-semibold tracking-widest">
+                CARBIONIX
               </div>
             </div>
 
@@ -84,8 +84,21 @@ export default function RootLayout({
 
           </div>
           
-          <div className="max-w-[1200px] mx-auto px-6 mt-12 pt-6 border-t border-gray-800 text-center text-xs text-gray-500">
-            &copy; {new Date().getFullYear()} C-GRIT v3.2 &middot; Dibangun untuk Satria Data Nasional 2026
+          <div className="max-w-[1200px] mx-auto px-6 mt-12 pt-6 border-t border-gray-800">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-3">
+              <p className="text-xs text-gray-500">
+                &copy; {new Date().getFullYear()} C-GRIT v3.2 &middot; Dibangun untuk Satria Data Nasional 2026
+              </p>
+              <div className="flex items-center gap-1.5 text-[11px] text-gray-600">
+                <span className="text-emerald-700 font-semibold tracking-wider uppercase text-[10px]">CARBIONIX</span>
+                <span className="text-gray-700">&mdash;</span>
+                <span>Rizal Wahyu Pratama</span>
+                <span className="text-gray-700">&middot;</span>
+                <span>Khulika Malkan</span>
+                <span className="text-gray-700">&middot;</span>
+                <span>Mikhael Setia Budi</span>
+              </div>
+            </div>
           </div>
         </footer>
       </body>
